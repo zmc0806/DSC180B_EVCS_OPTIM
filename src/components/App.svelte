@@ -3,7 +3,7 @@
   import Introduction from './Introduction.svelte';
 
 
-  let sections = ["Home", "Introduction", "Methods", "Results", "Conclusion", "Resources"];
+  let sections = ["Home", "Introduction"];
 </script>
 
 <nav class="nav-bar">
@@ -15,10 +15,7 @@
 <main>
   <section id="home"><Home /></section>
   <section id="introduction"><Introduction /></section>
-  <section id="methods"><Methods /></section>
-  <section id="results"><Results /></section>
-  <section id="conclusion"><Conclusion /></section>
-  <section id="resources"><Resources /></section>
+
 </main>
 
 <style>
