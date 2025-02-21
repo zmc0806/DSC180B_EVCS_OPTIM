@@ -10,7 +10,7 @@ export default {
       strict: true
     }),
     paths: {
-      base: "/ev_charge_station"  // ⚠ Ensure this matches your repo name!
+      base: "/DSC180B_EVCS_OPTIM"  // ⚠ Ensure this matches repo name
     },
     appDir: "internal" // Helps avoid GitHub Pages caching issues
   }
