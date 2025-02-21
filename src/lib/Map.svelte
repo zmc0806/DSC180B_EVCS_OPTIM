@@ -1,6 +1,6 @@
 <script>
-  let base = "/ev_charge_station";
-  let mapUrl = "https://zmc0806.github.io/ev_charge_station/Map_of_parking_lots_with_demand_scores.html";
+  let base = "/DSC180B_EVCS_OPTIM";
+  let mapUrl = "https://zmc0806.github.io/DSC180B_EVCS_OPTIM/Map_of_parking_lots_with_demand_scores.html";
   
 </script>
 
