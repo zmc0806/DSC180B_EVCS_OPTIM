@@ -1,4 +1,5 @@
 <script>
+  let base = "/ev_charge_station";
   let mapUrl = "/Map_of_parking_lots_with_demand_scores.html";
 </script>
 
