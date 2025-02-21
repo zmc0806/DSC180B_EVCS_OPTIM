@@ -1,138 +1,136 @@
-<!-- App.svelte -->
 <script>
-  import { Car, MapPin, Zap, LineChart } from 'lucide-svelte';
+  let showMoreIntro = false;
+  let showMoreMethods = false;
+  import Map from "$lib/Map.svelte";
 </script>
 
-<div class="min-h-screen bg-white">
-  <!-- Hero Section -->
-  <header class="bg-blue-600 text-white py-20">
-    <div class="max-w-4xl mx-auto px-6">
-      <h1 class="text-4xl font-bold mb-4">
-        Optimizing EV Charging Station Placement in San Diego
-      </h1>
-      <p class="text-xl opacity-90">
-        Using data-driven methods to strategically expand electric vehicle infrastructure
-      </p>
+<main class="container">
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#methods">Methods</a></li>
+      <li><a href="#results">Results</a></li>
+      <li><a href="#future-work">Future Work</a></li>
+      <li><a href="#resources">Resources</a></li>
+    </ul>
+  </nav>
+
+  <!-- Introduction -->
+  <section id="introduction">
+    <h1>EVCS-OPTIM: Optimizing EV Charging Station Placement</h1>
+    <p>Electric vehicle adoption is growing rapidly, but charging station placement remains a challenge. This project provides a data-driven tool to strategically determine optimal locations for new EV charging stations.</p>
+    <button on:click={() => showMoreIntro = !showMoreIntro}>
+      {showMoreIntro ? "Show Less" : "Read More"}
+    </button>
+    {#if showMoreIntro}
+      <p>By analyzing traffic patterns, population density, energy grid constraints, and proximity to existing infrastructure, we create a model that recommends the best locations for new EV charging stations.</p>
+    {/if}
+  </section>
+
+  <!-- Literature Review -->
+  <section id="literature-review">
+    <h2>Literature Review</h2>
+    <p>Our approach was inspired by various studies that used optimization and machine learning to determine EV charging station locations. Initially, we considered ML models but found optimization scoring to be a more effective strategy.</p>
+  </section>
+
+  <!-- Data Sources -->
+  <section id="data">
+    <h2>Data Sources</h2>
+    <ul>
+      <li><strong>AFDC:</strong> Public charging station locations and specifications</li>
+      <li><strong>SDG&E:</strong> Energy usage data and grid constraints</li>
+      <li><strong>SANDAG:</strong> Demographic and income data</li>
+      <li><strong>CA DMV:</strong> Vehicle registration data</li>
+    </ul>
+  </section>
+
+  <!-- Methods -->
+  <section id="methods">
+    <h2>Methodology</h2>
+    <p>Each parking lot is evaluated based on multiple factors, including:</p>
+    <ul>
+      <li>Traffic volume and proximity to major roads</li>
+      <li>Population density and demographics</li>
+      <li>Existing EV charging infrastructure</li>
+      <li>Energy grid capacity</li>
+    </ul>
+    <button on:click={() => showMoreMethods = !showMoreMethods}>
+      {showMoreMethods ? "Show Less" : "Read More"}
+    </button>
+    {#if showMoreMethods}
+      <p>Data is normalized using Min-Max scaling, and weighted using feature importance analysis. The final score ranks parking lots for optimal EV charger placement.</p>
+    {/if}
+  </section>
+
+  <!-- Interactive Map -->
+  <section id="map-section">
+    <h2>Interactive EV Charging Demand Map</h2>
+    <p>The interactive map below shows parking lots with their corresponding demand scores for optimal EV charging station placement.</p>
+    <Map />
+  </section>
+
+  <!-- Results -->
+  <section id="results">
+    <h2>Results</h2>
+    <p>The following map highlights the recommended parking lots for EV charging station placement.</p>
+    <!-- Placeholder for an interactive map -->
+    <div id="map-container">
+      <p>(Interactive map coming soon!)</p>
     </div>
-  </header>
+  </section>
 
-  <!-- Main Content -->
-  <main class="max-w-4xl mx-auto px-6 py-12">
-    <!-- Impact Section -->
-    <section class="mb-16">
-      <h2 class="text-3xl font-bold mb-8 text-gray-800">Why This Matters</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="p-6 bg-gray-50 rounded-lg">
-          <Car class="w-12 h-12 text-blue-600 mb-4" />
-          <h3 class="text-xl font-semibold mb-2">Growing EV Adoption</h3>
-          <p class="text-gray-600">
-            EV sales are projected to exceed 30% of all new vehicle sales by 2030 in the US
-          </p>
-        </div>
-        <div class="p-6 bg-gray-50 rounded-lg">
-          <MapPin class="w-12 h-12 text-blue-600 mb-4" />
-          <h3 class="text-xl font-semibold mb-2">Strategic Placement</h3>
-          <p class="text-gray-600">
-            Well-distributed charging infrastructure is crucial for supporting widespread EV adoption
-          </p>
-        </div>
-        <div class="p-6 bg-gray-50 rounded-lg">
-          <Zap class="w-12 h-12 text-blue-600 mb-4" />
-          <h3 class="text-xl font-semibold mb-2">Infrastructure Challenge</h3>
-          <p class="text-gray-600">
-            San Diego's EV registrations have doubled since 2022, requiring rapid infrastructure growth
-          </p>
-        </div>
-      </div>
-    </section>
+  <!-- Future Work -->
+  <section id="future-work">
+    <h2>Future Work</h2>
+    <ul>
+      <li>Incorporate real-time charging station usage data</li>
+      <li>Develop AI-driven optimization algorithms</li>
+      <li>Expand model to include private parking facilities</li>
+    </ul>
+  </section>
 
-    <!-- Our Approach -->
-    <section class="mb-16">
-      <h2 class="text-3xl font-bold mb-8 text-gray-800">Our Approach</h2>
-      <div class="prose max-w-none">
-        <p class="text-gray-600 text-lg mb-6">
-          We developed EVCS-OPTIM (Electric Vehicle Charging Station - Optimizing Placement Tool) to identify the most effective locations for new charging stations. Our approach combines:
-        </p>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="text-xl font-semibold mb-4">Data Analysis</h3>
-            <ul class="list-disc pl-6 space-y-2 text-gray-600">
-              <li>Traffic patterns and volume</li>
-              <li>Demographic and income data</li>
-              <li>Existing charging infrastructure</li>
-              <li>Power grid capacity</li>
-            </ul>
-          </div>
-          <div class="bg-gray-50 p-6 rounded-lg">
-            <h3 class="text-xl font-semibold mb-4">Key Features</h3>
-            <ul class="list-disc pl-6 space-y-2 text-gray-600">
-              <li>Interactive visualization tools</li>
-              <li>Multi-factor scoring system</li>
-              <li>Equity considerations</li>
-              <li>Future growth projections</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Results Section -->
-    <section class="mb-16">
-      <h2 class="text-3xl font-bold mb-8 text-gray-800">Results</h2>
-      <div class="bg-gray-100 p-8 rounded-lg text-center">
-        <LineChart class="w-16 h-16 mx-auto mb-4 text-blue-600" />
-        <p class="text-gray-600">Interactive visualization coming soon</p>
-      </div>
-    </section>
-
-    <!-- Impact & Conclusions -->
-    <section class="mb-16">
-      <h2 class="text-3xl font-bold mb-8 text-gray-800">Impact</h2>
-      <div class="prose max-w-none text-gray-600">
-        <p class="mb-4">
-          Our research provides valuable insights for multiple stakeholders:
-        </p>
-        <ul class="space-y-4">
-          <li>
-            <strong class="text-gray-800">Urban Planners:</strong> Data-driven framework for infrastructure investment decisions
-          </li>
-          <li>
-            <strong class="text-gray-800">Utility Companies:</strong> Identification of areas requiring grid capacity enhancement
-          </li>
-          <li>
-            <strong class="text-gray-800">Community Advocates:</strong> Equity-focused planning to prevent charging deserts
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section>
-      <div class="bg-blue-50 p-8 rounded-lg text-center">
-        <h2 class="text-2xl font-bold mb-4 text-gray-800">Learn More</h2>
-        <p class="text-gray-600 mb-6">
-          Interested in the technical details? Check out our full research report and code.
-        </p>
-        <div class="space-x-4">
-          <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">
-            View Report
-          </button>
-          <button class="bg-gray-800 text-white px-6 py-2 rounded-lg hover:bg-gray-900">
-            GitHub
-          </button>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-gray-100 py-8">
-    <div class="max-w-4xl mx-auto px-6 text-center text-gray-600">
-      <p>© 2024 EVCS-OPTIM Project</p>
-    </div>
-  </footer>
-</div>
+  <!-- Resources -->
+  <section id="resources">
+    <h2>Resources</h2>
+    <p><a href="https://github.com/your-repo">GitHub Repository</a></p>
+    <p><a href="report.pdf">Full Project Report</a></p>
+  </section>
+</main>
 
 <style>
-
+  .container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+  nav {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  h1, h2 {
+    color: #0077cc;
+  }
+  button {
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  #map-container {
+    width: 100%;
+    height: 400px;
+    background: #eee;
+    text-align: center;
+    line-height: 400px;
+  }
 </style>
