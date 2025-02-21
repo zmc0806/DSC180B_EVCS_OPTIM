@@ -1,10 +1,7 @@
 <script>
   import Home from './Home.svelte';
   import Introduction from './Introduction.svelte';
-  import Methods from './Methods.svelte';
-  import Results from './Results.svelte';
-  import Conclusion from './Conclusion.svelte';
-  import Resources from './Resources.svelte';
+
 
   let sections = ["Home", "Introduction", "Methods", "Results", "Conclusion", "Resources"];
 </script>
