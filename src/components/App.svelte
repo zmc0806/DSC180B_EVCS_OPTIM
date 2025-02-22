@@ -4,7 +4,9 @@
   import Map from "$lib/Map.svelte";
   import { onMount } from "svelte";
   let base = "/DSC180B_EVCS_OPTIM";
-  let imageUrl = "https://zmc0806.github.io/DSC180B_EVCS_OPTIM/us-public-and-private-el.svg"; 
+  import EVChargingChart from '$lib/EVChargingChart.svelte';
+
+
 </script>
 
 <main class="container">
@@ -45,19 +47,9 @@
       a well-distributed charging network is essential to combat "charging deserts" and range anxiety.
     </p>
 
-    <!-- SVG Image -->
-    <div class="svg-container">
-      <!-- Option 1: Use an external SVG file -->
-      <img src={imageUrl} alt="EV Growth Projection" />
+    <EVChargingChart />
 
-      <!-- Option 2: Use an inline SVG -->
-      <!-- 
-      <svg viewBox="0 0 200 100" width="100%" height="200">
-        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="lightgreen" />
-        <text x="50" y="55" text-anchor="middle" font-size="12" fill="black">EV Growth</text>
-      </svg> 
-      -->
-    </div>
+
 
     <p>
       Our study aims to optimize EV charger placement by analyzing key factors such as cost, network proximity, and demand incentives. 
