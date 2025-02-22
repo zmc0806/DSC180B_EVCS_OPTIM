@@ -2,6 +2,9 @@
   let showMoreIntro = false;
   let showMoreMethods = false;
   import Map from "$lib/Map.svelte";
+  import { onMount } from "svelte";
+  let base = "/DSC180B_EVCS_OPTIM";
+  let imageUrl = "https://zmc0806.github.io/DSC180B_EVCS_OPTIM/us-public-and-private-el.svg"; 
 </script>
 
 <main class="container">
@@ -26,6 +29,40 @@
     {#if showMoreIntro}
       <p>By analyzing traffic patterns, population density, energy grid constraints, and proximity to existing infrastructure, we create a model that recommends the best locations for new EV charging stations.</p>
     {/if}
+  </section>
+
+
+  <!-- ✅ New Summary Section Before Literature Review -->
+  <section id="ev-summary">
+    <h2>Electric Vehicle Growth & Charging Infrastructure</h2>
+    <p>
+      The electric vehicle (EV) industry is expanding rapidly due to technological advancements and increasing environmental awareness. 
+      By 2030, EVs are projected to make up over <strong>30% of new vehicle sales</strong> in the U.S. 
+      California leads this transition, targeting <strong>100% zero-emission vehicle sales by 2035</strong>.
+    </p>
+    <p>
+      However, insufficient charging infrastructure presents a major challenge. In San Diego, where EV registrations have doubled since 2022, 
+      a well-distributed charging network is essential to combat "charging deserts" and range anxiety.
+    </p>
+
+    <!-- SVG Image -->
+    <div class="svg-container">
+      <!-- Option 1: Use an external SVG file -->
+      <img src={imageUrl} alt="EV Growth Projection" />
+
+      <!-- Option 2: Use an inline SVG -->
+      <!-- 
+      <svg viewBox="0 0 200 100" width="100%" height="200">
+        <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="lightgreen" />
+        <text x="50" y="55" text-anchor="middle" font-size="12" fill="black">EV Growth</text>
+      </svg> 
+      -->
+    </div>
+
+    <p>
+      Our study aims to optimize EV charger placement by analyzing key factors such as cost, network proximity, and demand incentives. 
+      Understanding these relationships allows us to strategically position new EV charging stations where they are most needed.
+    </p>
   </section>
 
   <!-- Literature Review -->
