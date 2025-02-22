@@ -22,7 +22,7 @@
   // ======= 2. Chart dimensions and margins =======
   let chartWidth = 700;
   let chartHeight = 450;
-  let margin = { top: 40, right: 120, bottom: 50, left: 60 };
+  let margin = { top: 40, right: 160, bottom: 50, left: 60 };
 
   // Variables to control the visibility of the two lines
   let showPorts = true;
