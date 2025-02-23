@@ -3,6 +3,8 @@
   let showMoreMethods = false;
   import Map from "$lib/Map.svelte";
   import Map1 from "$lib/Map1.svelte";
+  import Map2 from "$lib/Map2.svelte";
+
   import { onMount } from "svelte";
   let base = "/DSC180B_EVCS_OPTIM";
   import EVChargingChart from '$lib/EVChargingChart.svelte';
@@ -95,9 +97,13 @@
 
   <!-- Interactive Map -->
   <section id="map-section">
-    <h2>Interactive EV Charging Demand Map</h2>
-    <p>The interactive map below shows parking lots with their corresponding demand scores for optimal EV charging station placement.</p>
+    <h2>public parking lots</h2>
+    <p>The interactive map below shows public parking lots.</p>
     <Map1 />
+
+    <h2>Map of Public Parking Lots Overlaid by City Zoning</h2>
+    <p>The interactive map below shows public parking lots overlaid by city zoning.</p>
+    <Map2 />
   </section>
 
   <!-- Results -->
