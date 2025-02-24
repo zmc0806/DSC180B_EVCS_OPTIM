@@ -13,6 +13,18 @@
 </script>
 
 <main class="container">
+
+  <div class="corner-images">
+    <img src="/hdsi-blue-gold.png" alt="Left Decoration" class="corner left" />
+    <img src="/sdge-logo.png" alt="Right Decoration" class="corner right" />
+  </div>
+
+  <div class="floating-icons">
+    <img src="/ev-icon.svg" alt="EV Icon" class="icon icon-1" />
+    <img src="/ev-icon.svg" alt="EV Icon" class="icon icon-2" />
+    <img src="/ev-icon.svg" alt="EV Icon" class="icon icon-3" />
+  </div>
+
   <!-- Navigation -->
   <nav>
     <ul>
@@ -136,6 +148,72 @@
 </main>
 
 <style>
+  .corner-images {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Prevents blocking clicks */
+  }
+
+  .corner {
+    position: absolute;
+    width: 80px; /* Adjust size as needed */
+    height: auto;
+    opacity: 0.8; /* Slight transparency */
+  }
+
+  .left {
+    top: 10px;
+    left: 10px;
+  }
+
+  .right {
+    top: 10px;
+    right: 10px;
+  }
+
+  .floating-icons {
+    position: fixed;
+    top: 10%;
+    right: 5%;
+    opacity: 0.5;
+    z-index: -1; /* Keeps icons in the background */
+  }
+
+  .icon {
+    width: 40px;
+    position: absolute;
+    animation: float 4s infinite alternate ease-in-out;
+  }
+
+  .icon-1 {
+    top: 50px;
+    left: 10%;
+    animation-duration: 3s;
+  }
+
+  .icon-2 {
+    top: 150px;
+    left: 50%;
+    animation-duration: 4s;
+  }
+
+  .icon-3 {
+    top: 250px;
+    left: 80%;
+    animation-duration: 5s;
+  }
+
+  @keyframes float {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-20px);
+    }
+  }
+
   .container {
     max-width: 800px;
     margin: auto;
