@@ -129,7 +129,8 @@
   <!-- Resources -->
   <section id="resources">
     <h2>Resources</h2>
-    <p><a href="https://github.com/your-repo">GitHub Repository</a></p>
+    <p><a href="https://github.com/ericstratford/charger-optimization">Project GitHub Repository</a></p>
+    <p><a href="https://github.com/ericstratford/charger-optimization">Website GitHub Repository</a></p>
     <p><a href="report.pdf">Full Project Report</a></p>
   </section>
 </main>
