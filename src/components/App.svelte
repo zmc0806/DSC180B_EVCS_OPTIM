@@ -21,9 +21,9 @@
   </div>
 
   <div class="floating-icons">
-    <img src="/electricity-svgrepo-com.svg" alt="EV Icon" class="icon icon-1" />
-    <img src="/car-side-svgrepo-com.svg" alt="EV Icon" class="icon icon-2" />
-    <img src="/electric-refueling-svgrepo-com.svg" alt="EV Icon" class="icon icon-3" />
+    <img src="/DSC180B_EVCS_OPTIM/electricity-svgrepo-com.svg" alt="EV Icon" class="icon icon-1" />
+    <img src="/DSC180B_EVCS_OPTIM/car-side-svgrepo-com.svg" alt="EV Icon" class="icon icon-2" />
+    <img src="/DSC180B_EVCS_OPTIM/electric-refueling-svgrepo-com.svg" alt="EV Icon" class="icon icon-3" />
   </div>
 
   <nav>
