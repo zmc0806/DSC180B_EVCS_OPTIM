@@ -15,26 +15,47 @@
 <main class="container">
 
   <div class="corner-images">
-    <img src="/hdsi-blue-gold.png" alt="Left Decoration" class="corner left" />
-    <img src="/sdge-logo.png" alt="Right Decoration" class="corner right" />
+    <img src="/DSC180B_EVCS_OPTIM/sdge-logo.png" alt="SDG&E Logo" class="corner left" />
+
+    <img src="/DSC180B_EVCS_OPTIM/hdsi-blue-gold.png" alt="Right Decoration" class="corner right" />
   </div>
 
   <div class="floating-icons">
-    <img src="/ev-icon.svg" alt="EV Icon" class="icon icon-1" />
-    <img src="/ev-icon.svg" alt="EV Icon" class="icon icon-2" />
-    <img src="/ev-icon.svg" alt="EV Icon" class="icon icon-3" />
+    <img src="/electricity-svgrepo-com.svg" alt="EV Icon" class="icon icon-1" />
+    <img src="/car-side-svgrepo-com.svg" alt="EV Icon" class="icon icon-2" />
+    <img src="/electric-refueling-svgrepo-com.svg" alt="EV Icon" class="icon icon-3" />
   </div>
 
-  <!-- Navigation -->
   <nav>
     <ul>
-      <li><a href="#introduction">Introduction</a></li>
-      <li><a href="#methods">Methods</a></li>
-      <li><a href="#results">Results</a></li>
-      <li><a href="#future-work">Future Work</a></li>
-      <li><a href="#resources">Resources</a></li>
+      <li>
+        <a href="#introduction">
+          📖 Introduction
+        </a>
+      </li>
+      <li>
+        <a href="#methods">
+          ⚙️ Methods
+        </a>
+      </li>
+      <li>
+        <a href="#results">
+          📊 Results
+        </a>
+      </li>
+      <li>
+        <a href="#future-work">
+          🚀 Future Work
+        </a>
+      </li>
+      <li>
+        <a href="#resources">
+          📚 Resources
+        </a>
+      </li>
     </ul>
   </nav>
+
 
   <!-- Introduction -->
   <section id="introduction">
@@ -148,6 +169,73 @@
 </main>
 
 <style>
+  :global(body) {
+    background: linear-gradient(135deg, #bbdefb, #e3f2fd, #ffffff);
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+  }
+
+
+  /* Navigation Bar */
+  nav {
+    background: #0077cc;  /* Blue background */
+    padding: 15px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+
+  /* Navigation List */
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  /* Navigation Items */
+  nav ul li {
+    display: inline-block;
+  }
+
+  /* Navigation Links */
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon & text */
+  }
+
+  /* Make Sure Text is Always Visible */
+  nav ul li a span {
+    display: inline; /* Ensures text is always visible */
+  }
+
+  /* Hover Effect */
+  nav ul li a:hover {
+    background: #005fa3;
+    color: #f0f0f0;
+  }
+
+  
+
+
+
+
+
+
   .corner-images {
     position: fixed;
     width: 100%;
@@ -158,14 +246,18 @@
 
   .corner {
     position: absolute;
-    width: 80px; /* Adjust size as needed */
+    width: 190px; /* Adjust size as needed */
     height: auto;
     opacity: 0.8; /* Slight transparency */
+    
+    
   }
 
   .left {
-    top: 10px;
-    left: 10px;
+    top: -60px;
+    left: 50px;
+    
+    
   }
 
   .right {
